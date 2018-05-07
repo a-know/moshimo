@@ -1,0 +1,22 @@
+runtime: go
+api_version: go1.8
+instance_class: F1
+
+handlers:
+- url: /
+  static_files: static/index.html
+  upload: static/index.html
+
+- url: /heartbeat
+  script: _go_app
+
+- url: /(.*)
+  static_files: static/\1
+  upload: static/(.*)
+
+automatic_scaling:
+  min_idle_instances: 1
+  max_idle_instances: 1
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+  max_concurrent_requests: 50
