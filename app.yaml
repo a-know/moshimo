@@ -10,9 +10,15 @@ handlers:
 - url: /heartbeat
   script: _go_app
 
+- url: /message
+  script: _go_app
+
 - url: /(.*)
   static_files: static/\1
   upload: static/(.*)
+
+includes:
+  - secret.yaml
 
 automatic_scaling:
   min_idle_instances: 1
