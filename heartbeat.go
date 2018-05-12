@@ -1,4 +1,4 @@
-package heartbeat
+package main
 
 import (
 	"fmt"
@@ -6,9 +6,9 @@ import (
 )
 
 func init() {
-	http.HandleFunc("/heartbeat", handler)
+	http.HandleFunc("/heartbeat", heartbeatHandler)
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func heartbeatHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "OK")
 }

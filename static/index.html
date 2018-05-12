@@ -194,15 +194,12 @@
                </div>
                <div class="no-padding col-lg-6 col-md-6 col-xs-12">
                   <div class="main-text">
-                     <h2>コンタクト / CONTACT</h2>
+                     <h2><i class="fa fa-envelope" aria-hidden="true"></i> コンタクト / CONTACT</h2>
                      <div class="contact-wrap">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <h4>メッセージを送る / Send direct message</h4>
-                        <h5>準備中です。 / now Underconstruction.</h5>
-                        <!--
-                        <textarea></textarea>
-                        <a class="btn btn-default" href="#about" role="button">送る / send</a>
-                         -->
+                        <form action="/message" method="post">
+                            <textarea name="message"></textarea>
+                            <input type="submit" class="btn btn-default" role="button" value="送る / send">
+                        </form>
                      </div>
                   </div>
                </div>
